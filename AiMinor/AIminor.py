@@ -37,8 +37,11 @@ sns.scatterplot(x=df['danceability'], y=df['energy'], hue=df['Cluster'], palette
 plt.title("Clusters based on Danceability and Energy")
 plt.show()
 
-#splitting data for training and test
-X_train, X_test, y_train, y_test = train_test_split(features, df['Cluster'], test_size=0.2, random_state=42)
+# Splitting data for training and test
+xtrain, xtest, ytrain, ytest = train_test_split(features, df['Cluster'], test_size=0.2, random_state=42)
 
-
-
+# Checking model correctness using confusion matrix
+ypred = kmeans.predict(xtest)
+conf_matrix = confusion_matrix(ytest, ypred)
+print("Confusion Matrix:")
+print(conf_matrix)
