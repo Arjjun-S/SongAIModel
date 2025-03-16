@@ -7,7 +7,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.preprocessing import LabelEncoder
 
 # Load dataset
-df = pd.read_csv(r"C:\Users\thiru\Downloads\spotify dataset.csv")
+df = pd.read_csv(r"AiMinor/spotify dataset.csv")
 
 # Data preprocessing
 df.dropna(inplace=True)  # Remove missing values
